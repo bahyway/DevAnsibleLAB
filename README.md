@@ -297,6 +297,8 @@ By using Ansible, you can automate the setup, configuration, and management of y
 
 #### pip install pyqt-tools
 
+![1719156859919](image/README/1719156859919.png)
+
 ### And Upgrade pip
 
 ![1719156701503](image/README/1719156701503.png)
