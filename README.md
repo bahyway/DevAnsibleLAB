@@ -295,9 +295,11 @@ By using Ansible, you can automate the setup, configuration, and management of y
 
 ![1719156427063](image/README/1719156427063.png)
 
+#### pip install pyqt-tools
+
 ### And Upgrade pip
 
-![1719156491112](image/README/1719156491112.png)
+![1719156701503](image/README/1719156701503.png)
 
 ### Method 1: Using `wget` or `curl`
 
