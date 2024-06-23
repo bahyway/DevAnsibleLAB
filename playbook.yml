@@ -1,0 +1,55 @@
+---
+- name: Setup and run PostgreSQL Docker container
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Install Docker module for Python
+      pip:
+        name: docker
+        state: present
+
+    - name: Ensure Docker service is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull PostgreSQL image
+      docker_image:
+        name: postgres
+        tag: latest
+        source: pull
+
+    - name: Run PostgreSQL container
+      docker_container:
+        name: postgres_container
+        image: postgres:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_USER: bfadam
+          POSTGRES_PASSWORD: bF@d@m22011964
+          POSTGRES_DB: bfOffice01
+        volumes:
+          - postgres_data:/var/lib/postgresql/data
+
+    - name: Copy initialization script to container
+      copy:
+        src: ./init.sql
+        dest: /docker-entrypoint-initdb.d/init.sql
+      notify: Restart PostgreSQL container
+
+  handlers:
+    - name: Restart PostgreSQL container
+      docker_container:
+        name: postgres_container
+        state: restarted

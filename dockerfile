@@ -11,3 +11,5 @@ EXPOSE 5432
 
 # Copy initialization script
 COPY init.sql /docker-entrypoint-initdb.d/
+
+
