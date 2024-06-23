@@ -291,6 +291,14 @@ By using Ansible, you can automate the setup, configuration, and management of y
 
 ![1719156282169](image/README/1719156282169.png)
 
+### Then install PyQt5 using pip:
+
+![1719156427063](image/README/1719156427063.png)
+
+### And Upgrade pip
+
+![1719156491112](image/README/1719156491112.png)
+
 ### Method 1: Using `wget` or `curl`
 
 #### Using `wget`
