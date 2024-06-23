@@ -17,11 +17,11 @@ class MainWindow(QMainWindow):
     def connect_to_db(self):
         try:
             connection = psycopg2.connect(
-                user="myuser",
-                password="mypassword",
+                user="bfadam",
+                password="bF@d@m22011964",
                 host="localhost",
                 port="5432",
-                database="mydatabase"
+                database="bfOffice01"
             )
             cursor = connection.cursor()
             cursor.execute("SELECT version();")
